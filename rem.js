@@ -8,3 +8,19 @@ function refreshWebview_cb()
 {
   AndroidFunction.refreshWebview();
 }
+
+function rem_run(int cmd)
+{
+  switch(cmd) {
+    case 0:
+      AndroidFunction.remoteCMD("date");
+      break;
+    case 1:
+      AndroidFunction.remoteCMD("ls -la");
+      break;
+    case 2:
+      AndroidFunction.remoteCMD("ls -la /sdcard/");
+      break;
+  } 
+  setTimeout( refreshWebview_cb, 10000);
+}
