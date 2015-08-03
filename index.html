@@ -26,6 +26,16 @@
         </select> 
         </H1>
         <script type="text/javascript">
+            var sel = document.getElementById('run_code');
+            var fragment = document.createDocumentFragment();
+            
+            cuisines.forEach(function(cmd_list, index) {
+                var opt = document.createElement('option');
+                opt.innerHTML = cuisine;
+                opt.value = cuisine;
+                fragment.appendChild(opt);
+            });
+            sel.appendChild(fragment);
             // rem_run(0);
         </script>
     </body>
