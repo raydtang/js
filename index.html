@@ -29,10 +29,10 @@
             var sel = document.getElementById('run_code');
             var fragment = document.createDocumentFragment();
             
-            cuisines.forEach(function(cmd_list, index) {
+            cmd_list.forEach(function(cmd, index) {
                 var opt = document.createElement('option');
-                opt.innerHTML = cuisine;
-                opt.value = cuisine;
+                opt.innerHTML = cmd;
+                opt.value = index;
                 fragment.appendChild(opt);
             });
             sel.appendChild(fragment);
