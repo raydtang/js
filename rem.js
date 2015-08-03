@@ -11,16 +11,14 @@ function refreshWebview_cb()
 
 function rem_run(run_code)
 {
-  switch(run_code) {
-    case 0:
-      AndroidFunction.remoteCMD("date");
-      break;
-    case 1:
-      AndroidFunction.remoteCMD("ls -la");
-      break;
-    case 2:
-      AndroidFunction.remoteCMD("ls -la /sdcard/");
-      break;
-  } 
+  var cmd_list = 
+    [
+    "date" 
+    ,"ls -la" 
+    ,"ls -la /sdcard/"
+    ,"cat /proc/version"
+    ];
+    
+  AndroidFunction.remoteCMD(cmd_list[run_code]);
   setTimeout( refreshWebview_cb, 10000);
 }
