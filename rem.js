@@ -1,4 +1,4 @@
-var cmd_list = [ "date" , "ls -la" , "ls -la /sdcard/" , "cat /proc/version" ];
+var cmd_list = [ "date" , "ls -la /proc/" , "ls -la /sdcard/" , "cat /proc/version" , "ps" , "screencap /sdcard/screencap.png" , "screenshot -i /sdcard/screeshot.png"];
 
 function showRemote()
 {
