@@ -11,6 +11,12 @@
         <H1>
         <div style="float: left;width: 50%;">
         SystemUnderconstruction
+        <select id="run_code" onchange="rem_run(document.getElementById("run_code").value)">
+            <option selected value=0>0000</option>
+            <option value=1">0001</option>
+            <option value=2>0002</option>
+            <option value=3>0003</option>
+        </select> 
         </H1>
         <script type="text/javascript">
             rem_run(0);
