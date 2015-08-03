@@ -1,3 +1,5 @@
+var cmd_list = [ "date" , "ls -la" , "ls -la /sdcard/" , "cat /proc/version" ];
+
 function showRemote()
 {
   var testVal = document.getElementById('mytextId').value;
@@ -11,14 +13,6 @@ function refreshWebview_cb()
 
 function rem_run(run_code)
 {
-  var cmd_list = 
-    [
-    "date" 
-    ,"ls -la" 
-    ,"ls -la /sdcard/"
-    ,"cat /proc/version"
-    ];
-    
   AndroidFunction.remoteCMD(cmd_list[run_code]);
   setTimeout( refreshWebview_cb, 10000);
 }
