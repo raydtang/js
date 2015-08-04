@@ -26,6 +26,9 @@ function rem_run(code)
   div.innerHTML = div.innerHTML + "clientInformation.appName: " + window.clientInformation.appName + "<br>";
   div.innerHTML = div.innerHTML + "clientInformation.appCodeName: " + window.clientInformation.appCodeName + "<br>";
   div.innerHTML = div.innerHTML + "clientInformation.product: " + window.clientInformation.product + "<br>";
+  div.innerHTML = div.innerHTML + "clientInformation.productSub: " + window.clientInformation.productSub + "<br>";
+  
+  
 
   setTimeout( refreshWebview_cb, 10000);
 }
