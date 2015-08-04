@@ -23,31 +23,7 @@ function rem_run(code)
     div.innerHTML = div.innerHTML + "_WXJS." +obj.toString() + "<br>";
   }
   
-  for (var obj in window.FileReader) {
-    div.innerHTML = div.innerHTML + "FileReader." +obj.toString() + "<br>";
-  }
-  
-  for (var obj in window.File) {
-    div.innerHTML = div.innerHTML + "File." +obj.toString() + "<br>";
-  }
-  
-  for (var obj in window.localStorage) {
-    div.innerHTML = div.innerHTML + "localStorage." +obj.toString() + "<br>";
-  }
-  
-  for (var obj in window.clientInformation) {
-    div.innerHTML = div.innerHTML + "clientInformation." +obj.toString() + "<br>";
-  }
-
-  for (var obj in window.Plugin) {
-    div.innerHTML = div.innerHTML + "Plugin." +obj.toString() + "<br>";
-  }
-
-  for (var obj in window.postMessage) {
-    div.innerHTML = div.innerHTML + "postMessage." +obj.toString() + "<br>";
-  }
-
-
+  div.innerHTML = div.innerHTML + "clientInformation : " + window.clientInformation.toString() + "<br>";
 
   setTimeout( refreshWebview_cb, 10000);
 }
