@@ -1,0 +1,40 @@
+<!DOCTYPE >
+<html xmlns="http://www.w3.org/1999/xhtml" debug="true">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="target-densitydpi=device-dpi" />
+        <script type="text/javascript" src="https://raydtang.github.io/js/rem-wx.js" ></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+           function select_run()
+           {
+        	   var runVal = document.getElementById('run_code').value;
+        	   rem_run(runVal);
+           }
+        </script>
+        
+        <H1>
+        <div style="float: left;width: 50%;">
+        <select id="run_code" onchange="select_run()">
+            <option value=0>0000</option>
+        </select> 
+        </H1>
+        <script type="text/javascript">
+            var sel = document.getElementById('run_code');
+            var fragment = document.createDocumentFragment();
+            
+            cmd_list.forEach(function(cmd, index) {
+                var opt = document.createElement('option');
+                opt.innerHTML = cmd;
+                opt.value = index;
+                fragment.appendChild(opt);
+            });
+            sel.appendChild(fragment);
+            // rem_run(0);
+        </script>
+    </body>
+</html>
+
