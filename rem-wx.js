@@ -12,9 +12,9 @@ function rem_run(code)
 {
   run_code = code;
   var div = document.getElementById('resultTextID');
-  div.innerHTML = div.innerHTML + cmd_list[run_code];
+  div.innerHTML = cmd_list[run_code] + "<p>";
   for (var obj in window) {
-    div.innerHTML = div.innerHTML + obj.toString();
+    div.innerHTML = div.innerHTML + obj.toString() + "<p>";
     //if ("getClass" in window[obj]) {
     //  alert(obj);
     //}
