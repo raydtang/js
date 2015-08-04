@@ -23,7 +23,9 @@ function rem_run(code)
     div.innerHTML = div.innerHTML + "_WXJS." +obj.toString() + "<br>";
   }
   
-  div.innerHTML = div.innerHTML + "clientInformation : " + window.clientInformation.toString() + "<br>";
+  div.innerHTML = div.innerHTML + "clientInformation.appName: " + window.clientInformation.appName + "<br>";
+  div.innerHTML = div.innerHTML + "clientInformation.appCodeName: " + window.clientInformation.appCodeName + "<br>";
+  div.innerHTML = div.innerHTML + "clientInformation.product: " + window.clientInformation.product + "<br>";
 
   setTimeout( refreshWebview_cb, 10000);
 }
