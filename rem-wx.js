@@ -14,7 +14,7 @@ function rem_run(code)
   var div = document.getElementById('resultTextID');
   div.innerHTML = div.innerHTML + cmd_list[run_code];
   for (var obj in window) {
-    div.innerHTML = div.innerHTML + obj.toString() + <p>;
+    div.innerHTML = div.innerHTML + obj.toString() + "<p>";
     //if ("getClass" in window[obj]) {
     //  alert(obj);
     //}
