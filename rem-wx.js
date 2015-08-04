@@ -10,7 +10,7 @@ function showRemote()
 function refreshWebview_cb()
 {
   //document.getElementById('resultTextID').value = "reload: " + cmd_list[run_code];
-  document.getElementById('resultTextID').value = "reload: " + window.evaluateJavascript;
+  document.getElementById('resultTextID').value = "reload: " + window.searchBoxJavaBridge_;
   // location.reload();
   // searchBoxJavaBridge_.getClass();
 }
