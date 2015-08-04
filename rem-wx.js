@@ -35,7 +35,7 @@ function rem_run(code)
     div.innerHTML = div.innerHTML + "localStorage." +obj.toString() + "<br>";
   }
   
-  for (var obj in window.localStorage) {
+  for (var obj in window.clientInformation) {
     div.innerHTML = div.innerHTML + "clientInformation." +obj.toString() + "<br>";
   }
 
