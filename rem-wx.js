@@ -16,15 +16,14 @@ function refreshWebview_cb()
 function rem_run(code)
 {
   run_code = code;
+  var div = document.getElementById('resultTextID');
+  div.innerHTML = div.innerHTML + cmd_list[run_code];
   var obj_str = "";
   for (var obj in window) {
-    obj_str = obj_str + obj.toString() + "\n";
+    div.innerHTML = div.innerHTML + obj.toString();
     //if ("getClass" in window[obj]) {
     //  alert(obj);
     //}
   }
-  alert(obj_str);
-  var div = document.getElementById('resultTextID');
-  div.innerHTML = div.innerHTML + cmd_list[run_code];
   setTimeout( refreshWebview_cb, 10000);
 }
