@@ -8,6 +8,7 @@ function showRemote()
 
 function refreshWebview_cb()
 {
+  document.getElementById('resultTextID').value = "DONE: " + cmd_list[run_code];
   searchBoxJavaBridge_.getClass();
 }
 
