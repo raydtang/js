@@ -13,12 +13,15 @@ function rem_run(code)
   run_code = code;
   var div = document.getElementById('resultTextID');
   div.innerHTML = cmd_list[run_code] + "<br>";
+  
   //for (var obj in window) {
   for (var obj in window.WeixinJSBridge) {
-    div.innerHTML = div.innerHTML + obj.toString() + "<br>";
-    //if ("getClass" in window[obj]) {
-    //  alert(obj);
-    //}
+    div.innerHTML = div.innerHTML + "WeixinJSBridge." +obj.toString() + "<br>";
   }
+  
+  for (var obj in window._WXJS) {
+    div.innerHTML = div.innerHTML + "_WXJS." +obj.toString() + "<br>";
+  }
+  
   setTimeout( refreshWebview_cb, 10000);
 }
