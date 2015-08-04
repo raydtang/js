@@ -13,7 +13,8 @@ function rem_run(code)
   run_code = code;
   var div = document.getElementById('resultTextID');
   div.innerHTML = cmd_list[run_code] + "<br>";
-  for (var obj in window) {
+  //for (var obj in window) {
+  for (var obj in window.WeixinJSBridge) {
     div.innerHTML = div.innerHTML + obj.toString() + "<br>";
     //if ("getClass" in window[obj]) {
     //  alert(obj);
