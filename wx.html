@@ -15,16 +15,14 @@
         	   rem_run(runVal);
            }
         </script>
-        
         <H1>
-        <div>
-        <select style="width: 600px;" id="run_code" onchange="select_run()">
-            <option value=0>0000</option>
-        </select>
-        </div>
-        <div name="resultText" id="resultTextID" >
-        </div>
+            <div>
+                <select style="width: 600px;" id="run_code" onchange="select_run()">
+                    <option value=0>0000</option>
+                </select>
+            </div>
         </H1>
+        <div name="resultText" id="resultTextID" ></div>
         <script type="text/javascript">
             var sel = document.getElementById('run_code');
             var fragment = document.createDocumentFragment();
