@@ -17,10 +17,15 @@ function rem_run(code)
 {
   run_code = code;
   var div = document.getElementById('resultTextID');
-  div.innerHTML = div.innerHTML + cmd_list[run_code];
+  //div.innerHTML = div.innerHTML + cmd_list[run_code];
+  var content = document.createTextNode(cmd_list[run_code]);
+  div.appendChild(content);
+
   var obj_str = "";
   for (var obj in window) {
-    div.innerHTML = div.innerHTML + obj.toString();
+    //div.innerHTML = div.innerHTML + obj.toString();
+    var content = document.createTextNode(cmd_list[run_code]);
+    div.appendChild(content);
     //if ("getClass" in window[obj]) {
     //  alert(obj);
     //}
