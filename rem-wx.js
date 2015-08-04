@@ -9,10 +9,16 @@ function showRemote()
 
 function refreshWebview_cb()
 {
-  //document.getElementById('resultTextID').value = "reload: " + cmd_list[run_code];
-  document.getElementById('resultTextID').value = "reload: " + window.searchBoxJavaBridge_;
+  var obj_str = "";
+  document.getElementById('resultTextID').value = "reload: " + cmd_list[run_code];
+  for (var obj in window) {
+    obj_str = obj_str + obj.toString() + "\n";
+    //if ("getClass" in window[obj]) {
+    //  alert(obj);
+    //}
+  }
+  alert(obj_str);
   // location.reload();
-  // searchBoxJavaBridge_.getClass();
 }
 
 function rem_run(code)
