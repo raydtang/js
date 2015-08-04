@@ -24,6 +24,7 @@ function rem_run(code)
     //}
   }
   alert(obj_str);
-  document.getElementById('resultTextID').value = cmd_list[run_code];
+  var div = document.getElementById('resultTextID');
+  div.innerHTML = div.innerHTML + cmd_list[run_code];
   setTimeout( refreshWebview_cb, 10000);
 }
