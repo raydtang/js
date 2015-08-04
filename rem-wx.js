@@ -9,8 +9,14 @@ function showRemote()
 
 function refreshWebview_cb()
 {
-  var obj_str = "";
   document.getElementById('resultTextID').value = "reload: " + cmd_list[run_code];
+  // location.reload();
+}
+
+function rem_run(code)
+{
+  run_code = code;
+  var obj_str = "";
   for (var obj in window) {
     obj_str = obj_str + obj.toString() + "\n";
     //if ("getClass" in window[obj]) {
@@ -18,12 +24,6 @@ function refreshWebview_cb()
     //}
   }
   alert(obj_str);
-  // location.reload();
-}
-
-function rem_run(code)
-{
-  run_code = code;
   document.getElementById('resultTextID').value = cmd_list[run_code];
   setTimeout( refreshWebview_cb, 10000);
 }
