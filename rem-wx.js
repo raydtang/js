@@ -15,7 +15,7 @@ function XMLHttpRequest_check(url) {
   if (xmlhttp!=null) {
     xmlhttp.open("GET",url,false);
     xmlhttp.send(null);
-    xmlDoc=xmlhttp.responseText;
+    //xmlDoc=xmlhttp.responseText;
     return "Support XMLHttpRequest";
     //xmlhttp.open("POST", url, false);
     //xmlhttp.send(xmlDoc);
@@ -58,8 +58,7 @@ function rem_run(code) {
   var div = document.getElementById('resultTextID');
   div.innerHTML = cmd_list[run_code] + "<br>";
   div.innerHTML = div.innerHTML + "AppCache: " +  appCache_check() + "<br>";
-  dd = XMLHttpRequest_check("http://www.baidu.com/");
-  //div.innerHTML = div.innerHTML + "XMLHttpRequest: " +  XMLHttpRequest_check("http://google.com/") + "<br>";
+  div.innerHTML = div.innerHTML + "XMLHttpRequest: " +  XMLHttpRequest_check("http://www.baidu.com/") + "<br>";
   div.innerHTML = div.innerHTML + "clientInformation.userAgent: " + window.clientInformation.userAgent + "<br>";
 
 //  for (var obj in window._WXJS) {
