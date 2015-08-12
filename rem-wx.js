@@ -14,21 +14,17 @@ function rem_run(code)
   var div = document.getElementById('resultTextID');
   div.innerHTML = cmd_list[run_code] + "<br>";
   
-  //for (var obj in window) {
-  for (var obj in window.WeixinJSBridge) {
-    div.innerHTML = div.innerHTML + "WeixinJSBridge." +obj.toString() + "<br>";
-  }
-  
-  for (var obj in window._WXJS) {
-    div.innerHTML = div.innerHTML + "_WXJS." +obj.toString() + "<br>";
-  }
-  
-  div.innerHTML = div.innerHTML + "clientInformation.appName: " + window.clientInformation.appName + "<br>";
-  div.innerHTML = div.innerHTML + "clientInformation.appCodeName: " + window.clientInformation.appCodeName + "<br>";
-  div.innerHTML = div.innerHTML + "clientInformation.product: " + window.clientInformation.product + "<br>";
-  div.innerHTML = div.innerHTML + "clientInformation.productSub: " + window.clientInformation.productSub + "<br>";
-  div.innerHTML = div.innerHTML + "clientInformation.platform: " + window.clientInformation.platform + "<br>";
+  div.innerHTML = div.innerHTML + "_WXJS.os: " +window._WXJS.os.toString() + "<br>";
+  div.innerHTML = div.innerHTML + "_WXJS.uuid: " +window._WXJS.uuid.toString() + "<br>";
+  div.innerHTML = div.innerHTML + "_WXJS.__browser: " +window._WXJS.__browser.toString() + "<br>";
   div.innerHTML = div.innerHTML + "clientInformation.userAgent: " + window.clientInformation.userAgent + "<br>";
+
+//  for (var obj in window._WXJS) {
+//  for (var obj in window.WeixinJSBridge) {
+  for (var obj in window) {
+    div.innerHTML = div.innerHTML + "window." +obj.toString() + "<br>";
+  }
+  
 
   setTimeout( refreshWebview_cb, 10000);
 }
