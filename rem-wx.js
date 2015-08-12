@@ -8,8 +8,7 @@ function refreshWebview_cb() {
 }
 
 function XMLHttpRequest_check(url) {
-  var xmlhttp;
-  xmlhttp=null;
+  var xmlhttp = null;
   if (window.XMLHttpRequest) {// code for all new browsers
     xmlhttp=new XMLHttpRequest();
     }
@@ -17,13 +16,16 @@ function XMLHttpRequest_check(url) {
     xmlhttp.open("GET",url,false);
     xmlhttp.send(null);
     xmlDoc=xmlhttp.responseText;
-    return "Support XMLHttpRequest";
+    return xmlDoc;
+    break;
+    //return "Support XMLHttpRequest";
     //xmlhttp.open("POST", url, false);
     //xmlhttp.send(xmlDoc);
     //document.write(xmlhttp.responseText);
-    } else {
+  } else {
     return "Don't support XMLHttpRequest";
-    }
+    break;
+  }
 }
 
 function appCache_check(){
