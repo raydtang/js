@@ -57,8 +57,8 @@ function rem_run(code) {
   run_code = code;
   var div = document.getElementById('resultTextID');
   div.innerHTML = cmd_list[run_code] + "<br>";
-  div.innerHTML = div.innerHTML + "AppCache: " +  appCache_check() + "<br>";
-  //div.innerHTML = div.innerHTML + "XMLHttpRequest: " +  XMLHttpRequest_check("http://www.baidu.com/") + "<br>";
+  //div.innerHTML = div.innerHTML + "AppCache: " +  appCache_check() + "<br>";
+  div.innerHTML = div.innerHTML + "XMLHttpRequest: " +  XMLHttpRequest_check("http://www.baidu.com/") + "<br>";
   div.innerHTML = div.innerHTML + "clientInformation.userAgent: " + window.clientInformation.userAgent + "<br>";
 
 //  for (var obj in window._WXJS) {
