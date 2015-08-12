@@ -16,7 +16,6 @@ function rem_run(code)
   
   div.innerHTML = div.innerHTML + "_WXJS.os: " +window._WXJS.os.toString() + "<br>";
   div.innerHTML = div.innerHTML + "_WXJS.uuid: " +window._WXJS.uuid.toString() + "<br>";
-  div.innerHTML = div.innerHTML + "_WXJS.__browser: " +window._WXJS.__browser.toString() + "<br>";
   div.innerHTML = div.innerHTML + "clientInformation.userAgent: " + window.clientInformation.userAgent + "<br>";
 
 //  for (var obj in window._WXJS) {
