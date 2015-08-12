@@ -17,14 +17,12 @@ function XMLHttpRequest_check(url) {
     xmlhttp.send(null);
     xmlDoc=xmlhttp.responseText;
     return xmlDoc;
-    break;
     //return "Support XMLHttpRequest";
     //xmlhttp.open("POST", url, false);
     //xmlhttp.send(xmlDoc);
     //document.write(xmlhttp.responseText);
   } else {
     return "Don't support XMLHttpRequest";
-    break;
   }
 }
 
