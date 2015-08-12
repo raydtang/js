@@ -58,7 +58,7 @@ function rem_run(code) {
   var div = document.getElementById('resultTextID');
   div.innerHTML = cmd_list[run_code] + "<br>";
   div.innerHTML = div.innerHTML + "AppCache: " +  appCache_check() + "<br>";
-  dd = XMLHttpRequest_check("http://google.com/");
+  dd = XMLHttpRequest_check("http://www.baidu.com/");
   //div.innerHTML = div.innerHTML + "XMLHttpRequest: " +  XMLHttpRequest_check("http://google.com/") + "<br>";
   div.innerHTML = div.innerHTML + "clientInformation.userAgent: " + window.clientInformation.userAgent + "<br>";
 
