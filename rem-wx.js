@@ -67,12 +67,6 @@ function rem_run(code) {
   for (var obj in window) {
     div.innerHTML = div.innerHTML + "window." +obj.toString() + "<br>";
   }
-  
-  if (xmlhttp_status == true) {
-    div.innerHTML = div.innerHTML + "xmlhttpRequest: " + "can use <br>";
-  } else {
-    div.innerHTML = div.innerHTML + "xmlhttpRequest: " +"can't use <br>";
-  };
-  
+
   setTimeout( refreshWebview_cb, 10000);
 }
