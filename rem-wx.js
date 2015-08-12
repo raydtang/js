@@ -26,7 +26,6 @@ function xmlhttpRequest_check(url){
     {
     xmlhttp_status = false;
     }
-  }
 }
 
 function state_Change()
