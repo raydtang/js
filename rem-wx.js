@@ -14,8 +14,9 @@ function rem_run(code)
   var div = document.getElementById('resultTextID');
   div.innerHTML = cmd_list[run_code] + "<br>";
   
-  div.innerHTML = div.innerHTML + "_WXJS.os: " +window._WXJS.os.toString() + "<br>";
-  div.innerHTML = div.innerHTML + "_WXJS.uuid: " +window._WXJS.uuid.toString() + "<br>";
+  for (var obj in window._WXJS.os) {
+    div.innerHTML = div.innerHTML + "window." +obj.toString() + "<br>";
+  }
   div.innerHTML = div.innerHTML + "clientInformation.userAgent: " + window.clientInformation.userAgent + "<br>";
 
 //  for (var obj in window._WXJS) {
