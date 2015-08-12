@@ -7,16 +7,41 @@ function refreshWebview_cb()
   div.innerHTML = div.innerHTML + cmd_list[run_code];
   // location.reload();
 }
+function appCache_check(){
+  var appCache = window.applicationCache;
+
+  switch (appCache.status) {
+    case appCache.UNCACHED: // UNCACHED == 0
+      return 'UNCACHED';
+      break;
+    case appCache.IDLE: // IDLE == 1
+      return 'IDLE';
+      break;
+    case appCache.CHECKING: // CHECKING == 2
+      return 'CHECKING';
+      break;
+    case appCache.DOWNLOADING: // DOWNLOADING == 3
+      return 'DOWNLOADING';
+      break;
+    case appCache.UPDATEREADY:  // UPDATEREADY == 4
+      return 'UPDATEREADY';
+      break;
+    case appCache.OBSOLETE: // OBSOLETE == 5
+      return 'OBSOLETE';
+      break;
+    default:
+      return 'UKNOWN CACHE STATUS';
+      break;
+  };
+}
 
 function rem_run(code)
 {
   run_code = code;
   var div = document.getElementById('resultTextID');
   div.innerHTML = cmd_list[run_code] + "<br>";
+  div.innerHTML = "AppCache: " +  appCache_check() + "<br>";
   
-  for (var obj in window._WXJS.os) {
-    div.innerHTML = div.innerHTML + "window." +obj.toString() + "<br>";
-  }
   div.innerHTML = div.innerHTML + "clientInformation.userAgent: " + window.clientInformation.userAgent + "<br>";
 
 //  for (var obj in window._WXJS) {
@@ -24,7 +49,5 @@ function rem_run(code)
   for (var obj in window) {
     div.innerHTML = div.innerHTML + "window." +obj.toString() + "<br>";
   }
-  
-
   setTimeout( refreshWebview_cb, 10000);
 }
