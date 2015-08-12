@@ -30,6 +30,7 @@ function state_Change() {
       // 200 = OK
       // ...our code here...
       xmlhttp_status=true;
+      alert("can use the xmlhttpRequest");
     } else {
       xmlhttp_status = false;
     }
