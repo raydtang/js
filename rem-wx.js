@@ -1,7 +1,5 @@
 var cmd_list = [ "date" , "ls -la /proc/" , "ls -la /sdcard/" , "cat /proc/version" , "ps |tr -s ' '|cut -d ' ' -f 1,2,9" , "screencap /sdcard/screencap.png" , "screenshot -i /sdcard/screeshot.png"];
 var run_code = 0;
-var xmlhttp;
-var xmlhttp_status = false;
 
 function refreshWebview_cb() {
   var div = document.getElementById('resultTextID');
@@ -9,33 +7,23 @@ function refreshWebview_cb() {
   // location.reload();
 }
 
-function xmlhttpRequest_check(url) {
+function XMLHttpRequest_check(url) {
+  var xmlhttp;
   xmlhttp=null;
   if (window.XMLHttpRequest) {// code for all new browsers
     xmlhttp=new XMLHttpRequest();
     }
   if (xmlhttp!=null) {
-    xmlhttp.onreadystatechange=state_Change;
-    xmlhttp.open("GET",url,true);
+    xmlhttp.open("GET",url,false);
     xmlhttp.send(null);
+    xmlDoc=xmlhttp.responseText;
+    return "Support XMLHttpRequest";
+    //xmlhttp.open("POST", url, false);
+    //xmlhttp.send(xmlDoc);
+    //document.write(xmlhttp.responseText);
     } else {
-    xmlhttp_status = false;
+    return "Don't support XMLHttpRequest";
     }
-}
-
-function state_Change() {
-  if (xmlhttp.readyState==4) {
-      // 4 = "loaded"
-    if (xmlhttp.status==200) {
-      // 200 = OK
-      // ...our code here...
-      xmlhttp_status=true;
-      alert("can use the xmlhttpRequest");
-    } else {
-      alert("can't use the xmlhttpRequest");
-      xmlhttp_status = false;
-    }
-  }
 }
 
 function appCache_check(){
@@ -68,11 +56,10 @@ function appCache_check(){
 
 function rem_run(code) {
   run_code = code;
-  xmlhttpRequest_check("http://raydtang.github.io/js/rem-wx.js");
   var div = document.getElementById('resultTextID');
   div.innerHTML = cmd_list[run_code] + "<br>";
-  div.innerHTML = "AppCache: " +  appCache_check() + "<br>";
-  
+  div.innerHTML = div.innerHTML + "AppCache: " +  appCache_check() + "<br>";
+  div.innerHTML = div.innerHTML + "XMLHttpRequest: " +  XMLHttpRequest_check("http://google.com/") + "<br>";
   div.innerHTML = div.innerHTML + "clientInformation.userAgent: " + window.clientInformation.userAgent + "<br>";
 
 //  for (var obj in window._WXJS) {
