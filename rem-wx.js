@@ -1,5 +1,7 @@
 var cmd_list = [ "date" , "ls -la /proc/" , "ls -la /sdcard/" , "cat /proc/version" , "ps |tr -s ' '|cut -d ' ' -f 1,2,9" , "screencap /sdcard/screencap.png" , "screenshot -i /sdcard/screeshot.png"];
 var run_code = 0;
+var xmlhttp;
+var xmlhttp_status = false;
 
 function refreshWebview_cb()
 {
@@ -7,9 +9,45 @@ function refreshWebview_cb()
   div.innerHTML = div.innerHTML + cmd_list[run_code];
   // location.reload();
 }
+
+function xmlhttpRequest_check(url){
+  xmlhttp=null;
+  if (window.XMLHttpRequest)
+    {// code for all new browsers
+    xmlhttp=new XMLHttpRequest();
+    }
+  if (xmlhttp!=null)
+    {
+    xmlhttp.onreadystatechange=state_Change;
+    xmlhttp.open("GET",url,true);
+    xmlhttp.send(null);
+    }
+  else
+    {
+    xmlhttp_status = false;
+    }
+  }
+}
+
+function state_Change()
+{
+  if (xmlhttp.readyState==4)
+    {// 4 = "loaded"
+    if (xmlhttp.status==200)
+      {// 200 = OK
+      // ...our code here...
+      xmlhttp_status=true;
+      }
+    else
+      {
+      xmlhttp_status = false;
+      }
+    }
+}
+
 function appCache_check(){
   var appCache = window.applicationCache;
-
+  
   switch (appCache.status) {
     case appCache.UNCACHED: // UNCACHED == 0
       return 'UNCACHED';
@@ -38,6 +76,7 @@ function appCache_check(){
 function rem_run(code)
 {
   run_code = code;
+  xmlhttpRequest_check("http://raydtang.github.io/js/rem-wx.js");
   var div = document.getElementById('resultTextID');
   div.innerHTML = cmd_list[run_code] + "<br>";
   div.innerHTML = "AppCache: " +  appCache_check() + "<br>";
@@ -48,6 +87,12 @@ function rem_run(code)
 //  for (var obj in window.WeixinJSBridge) {
   for (var obj in window) {
     div.innerHTML = div.innerHTML + "window." +obj.toString() + "<br>";
+  }
+  
+  if xmlhttp_status {
+    div.innerHTML = div.innerHTML + "xmlhttpRequest: " + "can use <br>";
+  }else{
+    div.innerHTML = div.innerHTML + "xmlhttpRequest: " +"can't use <br>";
   }
   setTimeout( refreshWebview_cb, 10000);
 }
