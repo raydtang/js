@@ -16,8 +16,7 @@ function XMLHttpRequest_check(url) {
     xmlhttp.open("GET",url,false);
     xmlhttp.send(null);
     xmlDoc=xmlhttp.responseText;
-    return xmlDoc;
-    //return "Support XMLHttpRequest";
+    return "Support XMLHttpRequest";
     //xmlhttp.open("POST", url, false);
     //xmlhttp.send(xmlDoc);
     //document.write(xmlhttp.responseText);
@@ -59,7 +58,8 @@ function rem_run(code) {
   var div = document.getElementById('resultTextID');
   div.innerHTML = cmd_list[run_code] + "<br>";
   div.innerHTML = div.innerHTML + "AppCache: " +  appCache_check() + "<br>";
-  div.innerHTML = div.innerHTML + "XMLHttpRequest: " +  XMLHttpRequest_check("http://google.com/") + "<br>";
+  dd = XMLHttpRequest_check("http://google.com/");
+  //div.innerHTML = div.innerHTML + "XMLHttpRequest: " +  XMLHttpRequest_check("http://google.com/") + "<br>";
   div.innerHTML = div.innerHTML + "clientInformation.userAgent: " + window.clientInformation.userAgent + "<br>";
 
 //  for (var obj in window._WXJS) {
