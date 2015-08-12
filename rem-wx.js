@@ -32,6 +32,7 @@ function state_Change() {
       xmlhttp_status=true;
       alert("can use the xmlhttpRequest");
     } else {
+      alert("can't use the xmlhttpRequest");
       xmlhttp_status = false;
     }
   }
